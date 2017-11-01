@@ -23,6 +23,7 @@ button {
   margin: 10px;
   text-align: center;
   color: #103;
+  transition: width .2s, height .2s, background-color .2s, margin: .2s;
 }
 
 button:hover {
@@ -30,7 +31,7 @@ button:hover {
   font-size: 15px;
   width: 255px;
   heigh: 35px;
-  margin: 8px;
+  margin: 10px;
   transition: width .2s, height .2s, background-color .2s, margin: .2s;
 }
 
