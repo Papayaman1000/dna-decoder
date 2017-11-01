@@ -223,6 +223,201 @@ const englishToRnaKey = {
   'future': 'ggg'
 };
 
+const cipherDecode = {
+  "d",
+  "space",
+  "=",
+  "1",
+  "b",
+  "divides",
+  "y",
+  "hyphen",
+  "m",
+  "4",
+  "a",
+  "decimal",
+  "!",
+  "?",
+  "(",
+  ";",
+  "f",
+  "t",
+  "u",
+  "p",
+  "5",
+  "space",
+  ")",
+  "space",
+  "r",
+  "n",
+  "period",
+  "space",
+  "o",
+  "9",
+  "e",
+  "x",
+  "v",
+  "w",
+  "i",
+  "q",
+  "space",
+  "oo",
+  "7",
+  "ng",
+  ",",
+  "%",
+  "period",
+  "-",
+  "6",
+  "+",
+  "8",
+  "*",
+  "2",
+  "0",
+  "t",
+  "3",
+  "h",
+  "s",
+  "l",
+  "hard-ch
+  (such
+  as
+  CHose)",
+  "th",
+  "j",
+  "slash",
+  "z",
+  "k",
+  "e",
+  "hard-g",
+  ":"
+}
+
+const rnaToCipherKey = {
+  'uuu': 'd',
+  'uuc': ' ',
+  'ccc': ' ',
+  'ccg': ' ',
+  'cag': ' ',
+  'acu': ' ',
+  'uua': '=',
+  'uug': '1',
+  'ucu': 'b',
+  'uca': 'y',
+  'ucg': '-',
+  'uau': 'm',
+  'uac': '4',
+  'uaa': 'a',
+  'ugu': '!',
+  'ugc': '?',
+  'uga': '(',
+  'ugg': ';',
+  'cuu': 'f',
+  'cuc': 't',
+  'gua': 't',
+  'cua': 'u',
+  'cug': 'p',
+  'ccu': '5',
+  'cca': ')',
+  'cau': 'r',
+  'cac': 'n',
+  'caa': '.',
+  'aaa': '.',
+  'ucc': '.',
+  'cgu': 'o',
+  'cgc': '9',
+  'cga': 'e',
+  'ggc': 'e',
+  'cgg': 'x',
+  'auu': 'v',
+  'auc': 'w',
+  'aua': 'i',
+  'aug': 'q',
+  'acc': 'oo',
+  'aca': '7',
+  'acg': 'ng',
+  'aau': ',',
+  'aac': '%',
+  'uag': '{',
+  'aag': '}',
+  'agu': '6',
+  'agc': '+',
+  'aga': '8',
+  'agg': '*',
+  'guu': '2',
+  'guc': '0',
+  'gug': '3',
+  'gcu': 'h',
+  'gcc': 's',
+  'gca': 'l',
+  'gcg': 'ch',
+  'gau': 'th',
+  'gac': 'j',
+  'gaa': '/',
+  'gag': 'z',
+  'ggu': 'k',
+  'gga': 'g',
+  'ggg': ':'
+};
+
+const cipherToRnaKey = {
+  'd': ['uuu'],
+  ' ': ['uuc', 'ccc', 'ccg', 'cag', 'acu'],
+  '=': ['uua'],
+  '1': ['uug'],
+  'b': ['ucu'],
+  'y': ['uca'],
+  '-': ['ucg'],
+  'm': ['uau'],
+  '4': ['uac'],
+  'a': ['uaa'],
+  '!': ['ugu'],
+  '?': ['ugc'],
+  '(': ['uga'],
+  ';': ['ugg'],
+  'f': ['cuu'],
+  't': ['cuc', 'gua'],
+  'u': ['cua'],
+  'p': ['cug'],
+  '5': ['ccu'],
+  ')': ['cca'],
+  'r': ['cau'],
+  'n': ['cac'],
+  '.': ['caa', 'aaa', 'ucc'],
+  'o': ['cgu'],
+  '9': ['cgc'],
+  'e': ['cga', 'ggc'],
+  'x': ['cgg'],
+  'v': ['auu'],
+  'w': ['auc'],
+  'i': ['aua'],
+  'q': ['aug'],
+  'oo': ['acc'],
+  '7': ['aca'],
+  'ng': ['acg'],
+  ',': ['aau'],
+  '%': ['aac'],
+  '{': ['uag'],
+  '}': ['aag'],
+  '6': ['agu'],
+  '+': ['agc'],
+  '8': ['aga'],
+  '*': ['agg'],
+  '2': ['guu'],
+  '0': ['guc'],
+  '3': ['gug'],
+  'h': ['gcu'],
+  's': ['gcc'],
+  'l': ['gca'],
+  'ch': ['gcg'],
+  'th': ['gau'],
+  'j': ['gac'],
+  '/': ['gaa'],
+  'z': ['gag'],
+  'k': ['ggu'],
+  'g': ['gga'],
+  ':': ['ggg']
+};
 
 
 function dnaFlip(dnaStrand) {
@@ -287,4 +482,26 @@ function noncodingDnaToRna(noncodingDnaStrand) {
 
 function rnaToNoncodingDna(rnaStrand) {
   return dnaFlip(rnaToDna(rnaStrand));
+}
+
+function rnaToCipher(rnaStrand) {
+  let basePairs = rnaStrand.toLowerCase().match(/.{1,3}/g);
+  for (var i = 0; i < basePairs.length; i++) {
+    basePairs[i] = rnaToCipherKey[basePairs[i]];
+  }
+  return basePairs.join('');
+}
+
+function cipherToRna(decryptedStr) {
+  let characters = decryptedStr.toLowerCase().split('');
+  for (var i = 0; i < basePairs.length; i++) {
+    if (i + 1 < characters.length && Object.keys(cipherToRnaKey).indexOf(characters[i] + characters[i + 1]) > -1) {
+      characters[i] += characters[i+1];
+      characters.slice(i+1, 1);
+    }
+  }
+  for (var j = 0; j < characters.length; j++) {
+    characters[j] = cipherToRnaKey[characters[j]];
+  }
+  return characters.join('');
 }
