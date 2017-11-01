@@ -424,7 +424,7 @@ function rnaToCipher(rnaStrand) {
 
 function cipherToRna(decryptedStr) {
   let characters = decryptedStr.toLowerCase().split('');
-  for (var i = 0; i < basePairs.length; i++) {
+  for (var i = 0; i < characters.length; i++) {
     if (i + 1 < characters.length && Object.keys(cipherToRnaKey).indexOf(characters[i] + characters[i + 1]) > -1) {
       characters[i] += characters[i+1];
       characters.slice(i+1, 1);
