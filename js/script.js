@@ -431,7 +431,7 @@ function cipherToRna(decryptedStr) {
     }
   }
   for (var j = 0; j < characters.length; j++) {
-    characters[j] = cipherToRnaKey[characters[j][Math.floor(Math.random() * characters[j].length)]];
+    characters[j] = cipherToRnaKey[characters[j]][Math.floor(Math.random() * characters[j].length)];
   }
   return characters.join('');
 }
