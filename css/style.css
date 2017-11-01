@@ -24,3 +24,22 @@ button {
   text-align: center;
   color: #103;
 }
+
+button:hover {
+  background-color: #DDBBFF;
+  font-size: 15px;
+  width: 255px;
+  heigh: 35px;
+  margin: 6px;
+  transition: width .2s, height .2s, background-color .2s, margin: .2s;
+}
+
+.secret {
+  background-color: #444;
+  color: #444
+}
+
+.secret:hover {
+  background-color: #4a4a4a !important;
+  color: #585858 !important;
+}
