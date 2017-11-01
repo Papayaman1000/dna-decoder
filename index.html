@@ -21,20 +21,24 @@
   <br /><button type="button" onclick="alert(noncodingDnaToRna(prompt('Type the noncoding DNA bases here.\nExample: AATGGCCTTAG')));">Noncoding DNA to RNA</button>
   <br /><button type="button" onclick="alert(rnaToAminoAcids(noncodingDnaToRna(prompt('Type the noncoding DNA bases here.\nExample: AATGGCCTTAG'))));">Noncoding DNA to Amino Acids</button>
   <br /><button type="button" onclick="alert(rnaToEnglish(noncodingDnaToRna(prompt('Type the noncoding DNA bases here.\nExample: AATGGCCTTAG'))));">Noncoding DNA to English</button>
-
+  <br />
   <br /><button type="button" onclick="alert(dnaToRna(prompt('Type the coding DNA bases here.\nExample: AATGGCCTTAG')));">Coding DNA to RNA</button>
   <br /><button type="button" onclick="alert(dnaToAminoAcids(prompt('Type the coding DNA bases here.\nExample: AATGGCCTTAG')));">Coding DNA to Amino Acids</button>
   <br /><button type="button" onclick="alert(rnaToEnglish(dnaToRna(prompt('Type the coding DNA bases here.\nExample: AATGGCCTTAG'))));">Coding DNA to English</button>
-  
+  <br />
   <br /><button type="button" onclick="alert(dnaFlip(rnaToDna(prompt('Type the RNA bases here.\nExample: AAUGGCCUUAG'))));">RNA to Noncoding DNA</button>
   <br /><button type="button" onclick="alert(rnaToDna(prompt('Type the RNA bases here.\nExample: AAUGGCCUUAG')));">RNA to Coding DNA</button>
   <br /><button type="button" onclick="alert(rnaToAminoAcids(prompt('Type the RNA bases here.\nExample: AAUGGCCUUAG')));">RNA to Amino Acids</button>
   <br /><button type="button" onclick="alert(rnaToEnglish(prompt('Type the RNA bases here.\nExample: AAUGGCCUUAG')));">RNA to English</button>
-
+  <br />
   <br /><button type="button" onclick="alert(dnaFlip(rnaToDna(englishToRna(prompt('Type an English sentence here. Put a space after the initiator (>) and before the end (.).\nExample: > The Beatles are the best rock band .')))));">English to Noncoding DNA</button>
   <br /><button type="button" onclick="alert(rnaToDna(englishToRna(prompt('Type an English sentence here. Put a space after the initiator (>) and before the end (.).\nExample: > The Beatles are the best rock band .'))));">English to Coding DNA</button>
   <br /><button type="button" onclick="alert(englishToRna(prompt('Type an English sentence here. Put a space after the initiator (>) and before the end (.).\nExample: > The Beatles are the best rock band .')));">English to RNA</button>
-  
+  <br />
+  <br /><button type="button" onclick="alert(rnaToCipher(dnaToRna(prompt('Type the coding DNA bases here.\nExample: AATGGCCTTAG'))));" class="secret">Coding DNA to Cipher</button>
+  <br /><button type="button" onclick="alert(rnaToCipher(prompt('Type the RNA bases here.\nExample: AAUGGCCUUAG')));" class="secret">RNA to Cipher</button>
+  <br /><button type="button" onclick="alert(cipherToRna(prompt('FOR ADVANCED USERS ONLY\n\nType a cypher-ready string here.')));" class="secret">
+  <br /><button type="button" onclick="alert(rnaToCipher(noncodingDnaToRna(prompt('Type the noncoding DNA bases here.\nExample: AATGGCCTTAG'))));" class="secret">Noncoding DNA to Cipher</button>
   <script src="js/script.js"></script>
 </body>
 
