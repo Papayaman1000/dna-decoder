@@ -23,7 +23,7 @@ button {
   margin: 10px;
   text-align: center;
   color: #103;
-  transition: width .2s, height .2s, background-color .2s, margin: .2s;
+  transition: width .4s, height .4s, background-color .4s, margin: .4s;
 }
 
 button:hover {
@@ -31,8 +31,8 @@ button:hover {
   font-size: 15px;
   width: 255px;
   heigh: 35px;
-  margin: 10px;
-  transition: width .2s, height .2s, background-color .2s, margin: .2s;
+  margin: 12px;
+  transition: width .4s, height .4s, background-color .4s, margin: .4s;
 }
 
 .secret {
