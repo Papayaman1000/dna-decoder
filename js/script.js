@@ -8,6 +8,13 @@ const dnaKey = {
   'g': 'c'
 };
 
+const rnaKey = {
+  'a': 'u',
+  'u': 'a',
+  'c': 'g',
+  'g': 'c'
+};
+
 const dnaToRnaKey = {
   'a': 'u',
   't': 'a',
@@ -351,6 +358,14 @@ const cipherToRnaKey = {
 
 
 function dnaFlip(dnaStrand) {
+  let basePairs = dnaStrand.toLowerCase().split('');
+  for (var i = 0; i < basePairs.length; i++) {
+    basePairs[i] = dnaKey[basePairs[i]];
+  }
+  return basePairs.join('');
+}
+
+function rnaFlip(rnaStrand) {
   let basePairs = dnaStrand.toLowerCase().split('');
   for (var i = 0; i < basePairs.length; i++) {
     basePairs[i] = dnaKey[basePairs[i]];
