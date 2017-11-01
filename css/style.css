@@ -23,11 +23,12 @@ button {
   margin: 10px;
   text-align: center;
   color: #103;
+  transition: background-color .4s, color .4s;
 }
 
 button:hover {
   background-color: #DDBBFF;
-  transition: background-color .4s;
+  transition: background-color .4s, color .4s;
 }
 
 .secret {
