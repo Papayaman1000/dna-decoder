@@ -30,7 +30,7 @@ button:hover {
   font-size: 15px;
   width: 255px;
   heigh: 35px;
-  margin: 6px;
+  margin: 8px;
   transition: width .2s, height .2s, background-color .2s, margin: .2s;
 }
 
