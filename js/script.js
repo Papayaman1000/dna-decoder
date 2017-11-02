@@ -1,7 +1,7 @@
 // DNA decoding tool and RNA-to-English sentence maker.
 // Creative Commons 3.0 CC-BY-NC licensed by Jared Albertson.
 
-const output = document.getElementById('resultOut');
+var output = document.getElementById('resultOut');
 
 const dnaKey = {
   'a': 't',
