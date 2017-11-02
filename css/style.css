@@ -40,3 +40,15 @@ button:hover {
   background-color: #4a4a4a !important;
   color: #585858 !important;
 }
+
+#resultOut {
+  font-family: sans-serif;
+  background-color: #222;
+  color: #DDD;
+  border-width: 1px;
+  border-color: #DDD;
+  box-shadow: inset 0px 10px 19px 0px rgba(0,0,0,0.75);
+  font-size: 16px;
+  width: 250px;
+  min-height: 25px;
+}
