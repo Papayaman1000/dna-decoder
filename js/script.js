@@ -1,6 +1,8 @@
 // DNA decoding tool and RNA-to-English sentence maker.
 // Creative Commons 3.0 CC-BY-NC licensed by Jared Albertson.
 
+const output = document.getElementById('resultOut');
+
 const dnaKey = {
   'a': 't',
   't': 'a',
@@ -449,4 +451,9 @@ function cipherToRna(decryptedStr) {
     characters[j] = cipherToRnaKey[characters[j]][Math.floor(Math.random() * characters[j].length)];
   }
   return characters.join('');
+}
+
+function display(item) {
+  output.innerHTML = item;
+  return;
 }
