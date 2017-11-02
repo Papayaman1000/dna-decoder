@@ -17,29 +17,37 @@
 
 <body>
   <h1>DNA Decoder Tool</h1>
-  <button type="button" onclick="alert(dnaFlip(prompt('Type the DNA bases here.\nExample: AATGGCCTTAG')));">DNA to counterpart DNA strand</button>
   
-  <br /><button type="button" onclick="alert(noncodingDnaToRna(prompt('Type the noncoding DNA bases here.\nExample: AATGGCCTTAG')));">Noncoding DNA to RNA</button>
-  <br /><button type="button" onclick="alert(rnaToAminoAcids(noncodingDnaToRna(prompt('Type the noncoding DNA bases here.\nExample: AATGGCCTTAG'))));">Noncoding DNA to Amino Acids</button>
-  <br /><button type="button" onclick="alert(rnaToEnglish(noncodingDnaToRna(prompt('Type the noncoding DNA bases here.\nExample: AATGGCCTTAG'))));">Noncoding DNA to English</button>
+  <br /><p>Results will appear in the box below.</p>
+  <br /><div id="resultOut"></div>
+  
+  <br /><button type="button" onclick="display(dnaFlip(prompt('Type the DNA bases here.\nExample: AATGGCCTTAG')));">DNA to counterpart DNA strand</button>
+  
+  <br /><button type="button" onclick="display(noncodingDnaToRna(prompt('Type the noncoding DNA bases here.\nExample: AATGGCCTTAG')));">Noncoding DNA to mRNA</button>
+  <br /><button type="button" onclick="display(rnaFlip(noncodingDnaToRna(prompt('Type the noncoding DNA bases here.\nExample: AATGGCCTTAG'))));">Noncoding DNA to tRNA</button>
+  <br /><button type="button" onclick="display(rnaToAminoAcids(noncodingDnaToRna(prompt('Type the noncoding DNA bases here.\nExample: AATGGCCTTAG'))));">Noncoding DNA to Amino Acids</button>
+  <br /><button type="button" onclick="display(rnaToEnglish(noncodingDnaToRna(prompt('Type the noncoding DNA bases here.\nExample: AATGGCCTTAG'))));">Noncoding DNA to English</button>
   <br />
-  <br /><button type="button" onclick="alert(dnaToRna(prompt('Type the coding DNA bases here.\nExample: AATGGCCTTAG')));">Coding DNA to RNA</button>
-  <br /><button type="button" onclick="alert(dnaToAminoAcids(prompt('Type the coding DNA bases here.\nExample: AATGGCCTTAG')));">Coding DNA to Amino Acids</button>
-  <br /><button type="button" onclick="alert(rnaToEnglish(dnaToRna(prompt('Type the coding DNA bases here.\nExample: AATGGCCTTAG'))));">Coding DNA to English</button>
+  <br /><button type="button" onclick="display(dnaToRna(prompt('Type the coding DNA bases here.\nExample: AATGGCCTTAG')));">Coding DNA to mRNA</button>
+  <br /><button type="button" onclick="display(rnaFlip(dnaToRna(prompt('Type the coding DNA bases here.\nExample: AATGGCCTTAG'))));">Coding DNA to tRNA</button>
+  <br /><button type="button" onclick="display(dnaToAminoAcids(prompt('Type the coding DNA bases here.\nExample: AATGGCCTTAG')));">Coding DNA to Amino Acids</button>
+  <br /><button type="button" onclick="display(rnaToEnglish(dnaToRna(prompt('Type the coding DNA bases here.\nExample: AATGGCCTTAG'))));">Coding DNA to English</button>
   <br />
-  <br /><button type="button" onclick="alert(dnaFlip(rnaToDna(prompt('Type the RNA bases here.\nExample: AAUGGCCUUAG'))));">RNA to Noncoding DNA</button>
-  <br /><button type="button" onclick="alert(rnaToDna(prompt('Type the RNA bases here.\nExample: AAUGGCCUUAG')));">RNA to Coding DNA</button>
-  <br /><button type="button" onclick="alert(rnaToAminoAcids(prompt('Type the RNA bases here.\nExample: AAUGGCCUUAG')));">RNA to Amino Acids</button>
-  <br /><button type="button" onclick="alert(rnaToEnglish(prompt('Type the RNA bases here.\nExample: AAUGGCCUUAG')));">RNA to English</button>
+  <br /><br /><button type="button" onclick="display(rnaFlip(prompt('Type the RNA bases here.\nExample: AAUGGCCUUAG'))));">RNA to counterpart RNA strand</button>
   <br />
-  <br /><button type="button" onclick="alert(dnaFlip(rnaToDna(englishToRna(prompt('Type an English sentence here. Put a space after the initiator (>) and before the end (.).\nExample: > The Beatles are the best rock band .')))));">English to Noncoding DNA</button>
-  <br /><button type="button" onclick="alert(rnaToDna(englishToRna(prompt('Type an English sentence here. Put a space after the initiator (>) and before the end (.).\nExample: > The Beatles are the best rock band .'))));">English to Coding DNA</button>
-  <br /><button type="button" onclick="alert(englishToRna(prompt('Type an English sentence here. Put a space after the initiator (>) and before the end (.).\nExample: > The Beatles are the best rock band .')));">English to RNA</button>
+  <br /><button type="button" onclick="display(dnaFlip(rnaToDna(prompt('Type the RNA bases here.\nExample: AAUGGCCUUAG'))));">mRNA to Noncoding DNA</button>
+  <br /><button type="button" onclick="display(rnaToDna(prompt('Type the RNA bases here.\nExample: AAUGGCCUUAG')));">mRNA to Coding DNA</button>
+  <br /><button type="button" onclick="display(rnaToAminoAcids(prompt('Type the RNA bases here.\nExample: AAUGGCCUUAG')));">mRNA to Amino Acids</button>
+  <br /><button type="button" onclick="display(rnaToEnglish(prompt('Type the RNA bases here.\nExample: AAUGGCCUUAG')));">mRNA to English</button>
   <br />
-  <br /><button type="button" onclick="alert(rnaToCipher(dnaToRna(prompt('Type the coding DNA bases here.\nExample: AATGGCCTTAG'))));" class="secret">Coding DNA to Cipher</button>
-  <br /><button type="button" onclick="alert(rnaToCipher(prompt('Type the RNA bases here.\nExample: AAUGGCCUUAG')));" class="secret">RNA to Cipher</button>
-  <br /><button type="button" onclick="alert(cipherToRna(prompt('FOR ADVANCED USERS ONLY\n\nType a cypher-ready string here.')));" class="secret">Encrypt text to RNA</button>
-  <br /><button type="button" onclick="alert(rnaToCipher(noncodingDnaToRna(prompt('Type the noncoding DNA bases here.\nExample: AATGGCCTTAG'))));" class="secret">Noncoding DNA to Cipher</button>
+  <br /><button type="button" onclick="display(dnaFlip(rnaToDna(englishToRna(prompt('Type an English sentence here. Put a space after the initiator (>) and before the end (.).\nExample: > The Beatles are the best rock band .')))));">English to Noncoding DNA</button>
+  <br /><button type="button" onclick="display(rnaToDna(englishToRna(prompt('Type an English sentence here. Put a space after the initiator (>) and before the end (.).\nExample: > The Beatles are the best rock band .'))));">English to Coding DNA</button>
+  <br /><button type="button" onclick="display(englishToRna(prompt('Type an English sentence here. Put a space after the initiator (>) and before the end (.).\nExample: > The Beatles are the best rock band .')));">English to RNA</button>
+  <br />
+  <br /><button type="button" onclick="display(rnaToCipher(dnaToRna(prompt('Type the coding DNA bases here.\nExample: AATGGCCTTAG'))));" class="secret">Coding DNA to Cipher</button>
+  <br /><button type="button" onclick="display(rnaToCipher(prompt('Type the RNA bases here.\nExample: AAUGGCCUUAG')));" class="secret">RNA to Cipher</button>
+  <br /><button type="button" onclick="display(cipherToRna(prompt('FOR ADVANCED USERS ONLY\n\nType a cypher-ready string here.')));" class="secret">Encrypt text to RNA</button>
+  <br /><button type="button" onclick="display(rnaToCipher(noncodingDnaToRna(prompt('Type the noncoding DNA bases here.\nExample: AATGGCCTTAG'))));" class="secret">Noncoding DNA to Cipher</button>
 </body>
 
 
